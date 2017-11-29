@@ -1,5 +1,5 @@
 # packman-gui
-Universal GUI for Node.js Dependencies Management
+Universal GUI for Node.js Dependencies Management. Compatible with npm and Yarn.
 
 #### Build Setup
 

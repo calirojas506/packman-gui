@@ -15,7 +15,7 @@ export default {
 			id: 1,
 			name: 'npm',
 			command: 'npm',
-			image: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg',
+			image: '/static/logos/Npm-logo.svg',
 			commands: {
 				install: 'install',
 				uninstall: 'uninstall',
@@ -31,7 +31,7 @@ export default {
 			id: 2,
 			name: 'Yarn',
 			command: 'yarn',
-			image: 'http://www.verdaccio.org/css/icon/yarn-logo.svg',
+			image: '/static/logos/yarn-logo.svg',
 			commands: {
 				install: 'add',
 				uninstall: 'remove',
