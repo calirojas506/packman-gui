@@ -17,7 +17,8 @@ npm run build
 ```
 ## Screenshots
 ![Screenshot](screenshots/1-start.png?raw=true)
-
+![Screenshot](screenshots/2-dependencies.png?raw=true)
+![Screenshot](screenshots/3-search.png?raw=true)
 
 
 
