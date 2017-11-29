@@ -10,6 +10,7 @@ global.jQuery = $
 require('bootstrap/dist/js/bootstrap.min.js')
 
 require('bootstrap/dist/css/bootstrap.min.css')
+require('bootstrap-tagsinput/dist/bootstrap-tagsinput.css')
 require('font-awesome/css/font-awesome.css')
 
 Vue.use(Vuex)

@@ -19,6 +19,7 @@
 							input.form-control(
 								v-model='packages'
 								required
+								data-role='tagsinput'
 							)
 						.text-left
 							.btn-group(
@@ -77,6 +78,11 @@
 <script>
 	import {mapGetters, mapActions} from 'vuex'
 	import Utils from '@/modules/Utils.js'
+	import $ from 'jquery'
+
+	require('bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')
+
+	global.jQuery = $
 
 	export default {
 		data(){
@@ -145,6 +151,9 @@
 		},
 		created(){
 			this.init()
+		},
+		mounted(){
+			$('input[data-role="tagsinput"]').tagsinput()
 		},
 		watch: {
 			'$route'(){
