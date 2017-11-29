@@ -16,6 +16,14 @@ npm run build
 
 ```
 
+## Stay In Touch
+
+- [Twitter](https://twitter.com/calirojas506)
+- [Facebook](https://www.facebook.com/calirojas506)
+- [LinkedIn](https://www.linkedin.com/in/cali-rojas-17403334/)
+- [YouTube](https://youtube.com/calirojas506)
+
+
 ## License
 [MIT](http://opensource.org/licenses/MIT)
 
