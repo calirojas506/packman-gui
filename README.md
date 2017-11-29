@@ -16,13 +16,16 @@ npm run build
 
 ```
 ## Screenshots
-![Screenshot](screenshots/1-start.png?raw=true)
-![Screenshot](screenshots/2-dependencies.png?raw=true)
-![Screenshot](screenshots/3-search.png?raw=true)
-![Screenshot](screenshots/4-install.png?raw=true)
-![Screenshot](screenshots/5-installing.png?raw=true)
-![Screenshot](screenshots/6-finished-installing.png?raw=true)
-
+<p align="center">
+	![Screenshot](screenshots/1-start.png?raw=true)
+	![Screenshot](screenshots/2-dependencies.png?raw=true)
+	![Screenshot](screenshots/3-search.png?raw=true)
+	![Screenshot](screenshots/4-install.png?raw=true)
+	![Screenshot](screenshots/5-installing.png?raw=true)
+	![Screenshot](screenshots/6-finished-installing.png?raw=true)
+	![Screenshot](screenshots/7-uninstall.png?raw=true)
+	![Screenshot](screenshots/8-finished-uninstalling.png?raw=true)
+</p>
 
 
 ## Stay In Touch

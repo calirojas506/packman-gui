@@ -11,7 +11,7 @@
 			.col-sm-12
 				template(v-if='!confirmed')
 					p Do you want to uninstall the selected package<span v-if='packages.length > 1'>s</span>?
-						strong  You could not revert this action.
+						strong  You cannot reverse this action.
 					.text-right
 						router-link.btn.btn-default(
 							:to="{name: 'uninstall', query: {packageName, confirmed: true, flag}}"
