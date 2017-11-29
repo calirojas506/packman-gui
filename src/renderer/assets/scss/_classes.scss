@@ -1,0 +1,50 @@
+.panel-body, .panel-heading{
+	padding: 0 !important;
+}
+
+.panel-heading{
+	background: #fff !important;
+	border-bottom: solid 1px #f00 !important;
+
+	a{
+		&.accordion-toggle{
+			text-decoration: none;
+			display: block;
+			padding: 10px 15px;
+			font-weight: bold;
+			font-size: .8em;
+
+			&:after{
+				font-family: "Glyphicons Halflings";
+				content: "\e114";
+				float: right;
+				color: grey;
+			}
+
+			&.collapsed{
+				&:after{
+					content: "\e080";
+				}
+			}
+		}
+	}
+}
+
+.fade{
+	&-enter{
+		opacity: 0;
+
+		&-active{
+			transition: opacity .7s;
+		}
+	}
+	&-leave{
+		&-to{
+			opacity: 0;
+		}
+	}
+}
+
+.progress-bar{
+	width: 100%;
+}

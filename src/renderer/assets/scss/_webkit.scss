@@ -1,0 +1,15 @@
+::-webkit-scrollbar {
+	width: 5px;
+	background: transparent;
+	opacity: .4;
+	height: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: rgba(255, 0, 0, .2);
+	border-radius: 5px;
+
+	&:hover{
+		background-color: rgba(255, 0, 0, 1);
+	}
+}
