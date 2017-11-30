@@ -20,7 +20,7 @@ export default {
 				install: 'install',
 				uninstall: 'uninstall',
 				outdated: 'outdated',
-				update: 'update'
+				update: 'install'
 			},
 			flags: {
 				dev: '--save-dev',
@@ -36,7 +36,7 @@ export default {
 				install: 'add',
 				uninstall: 'remove',
 				outdated: 'outdated',
-				update: 'update'
+				update: 'upgrade'
 			},
 			flags: {
 				dev: '--dev',

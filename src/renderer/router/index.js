@@ -31,11 +31,6 @@ export default new Router({
       component: require('@/components/Uninstall').default
     },
     {
-      path: '/update',
-      name: 'update',
-      component: require('@/components/Update').default
-    },
-    {
       name: 'about',
       path: '/about',
       component: require('@/components/About').default
