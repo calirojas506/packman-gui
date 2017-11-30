@@ -11,7 +11,7 @@
 			ref='icon'
 		)
 		p.text-center.c-drop-here__text
-			<slot>Drop here your dependencies file</slot>
+			<slot>Drop here your package.json</slot>
 			p &nbsp;
 </template>
 

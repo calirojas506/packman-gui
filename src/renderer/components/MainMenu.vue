@@ -58,6 +58,8 @@
 					border: 0;
 					color: rgba(255, 0, 0, .5);
 					transition: all ease .5s;
+					font-size: .8em;
+					margin-top: 15px;
 
 					&:hover, &:focus{
 						color: rgba(255, 0, 0, 1);

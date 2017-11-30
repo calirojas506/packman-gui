@@ -3,35 +3,43 @@
 		.row
 			.col-sm-12
 				h2(v-if='!finished')
-					template(v-if='flag != "--update--"')
-						span Install<span v-if='confirmed'>ing</span> packages
-					template(v-else)
-						span Updating packages
+					span Install<span v-if='confirmed'>ing</span> packages
 				h2(v-else)
-					span(v-if='flag != "--update--"') Finished installing packages
-					span(v-else) Finished updating packages
+					span Finished installing packages
 		.row
 			.col-sm-12
 				template(v-if='!confirmed')
 					form(@submit.prevent='startInstall')
 						.form-group
 							label.control-label Package names (comma separated):
-							input.form-control(
-								v-model='packages'
-								required
-								data-role='tagsinput'
+							input-tag.form-control(
+								:tags='tagsInput'
+								:class='{"height-fix": tagsInput.length}'
 							)
 						.text-left
 							.btn-group(
 								data-toggle='buttons'
-								v-if='flag != "--update--"'
 							)
-								<label class="btn btn-default col-sm-6" :class='{active: flag == currentPackageManager.flags.dep}'>
-									<input type="radio" :value="currentPackageManager.flags.dep" autocomplete="off" v-model='flag'> Production
-								</label>
-								<label class="btn btn-default col-sm-6" :class='{active: flag == currentPackageManager.flags.dev}'>
-									<input type="radio" :value="currentPackageManager.flags.dep" autocomplete="off" v-model='flag'> Development
-								</label>
+								label.btn.btn-default.col-sm-6(
+									:class='{active: flag == currentPackageManager.flags.dep}'
+								)
+									input(
+										type='radio'
+										:value="currentPackageManager.flags.dep"
+										autocomplete='off'
+										v-model='flag'
+									)
+									| Production
+								label.btn.btn-default.col-sm-6(
+									:class='{active: flag == currentPackageManager.flags.dev}'
+								)
+									input(
+										type='radio'
+										:value="currentPackageManager.flags.dep"
+										autocomplete='off'
+										v-model='flag'
+									)
+									| Development
 							.pull-right
 								button.btn.btn-default(
 									type='submit'
@@ -76,38 +84,41 @@
 </template>
 
 <script>
+	import InputTag from 'vue-input-tag'
 	import {mapGetters, mapActions} from 'vuex'
 	import Utils from '@/modules/Utils.js'
-	import $ from 'jquery'
-
-	require('bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')
-
-	global.jQuery = $
 
 	export default {
+		components: { InputTag },
 		data(){
 			return {
-				packages: '',
 				flag: '--save',
 				confirmed: false,
 				finished: false,
 				log: [],
 				exitCode: null,
-				from: ''
+				from: '',
+				tagsInput: []
 			}
 		},
 		computed: {
 			...mapGetters([
 				'project',
 				'currentPackageManager'
-			])
+			]),
+			packages: () => this.tagsInput.join(',')
 		},
 		methods: {
 			...mapActions([
 				'reloadProject'
 			]),
 			init(){
-				this.packages = this.$route.query.packages
+				let tags = this.$route.query.packages.split(',')
+				if(tags.length == 1 && tags[0] == ''){
+					tags = []
+				}
+
+				this.tagsInput = tags
 				this.confirmed = this.$route.query.confirmed
 				this.flag = this.$route.query.flag
 				this.from = this.$route.query.from
@@ -115,10 +126,10 @@
 				if(this.confirmed == true) this.install()
 			},
 			install(){
-				let packages = this.packages.split(',')
+				let packages = this.tagsInput
 				let norm = [this.currentPackageManager.commands.install]
 
-				if(this.flag != '--update--' && this.flag != ''){
+				if(this.flag != ''){
 					norm.push(this.flag)
 				}
 				let params = [...norm, ...packages]
@@ -152,9 +163,6 @@
 		created(){
 			this.init()
 		},
-		mounted(){
-			$('input[data-role="tagsinput"]').tagsinput()
-		},
 		watch: {
 			'$route'(){
 				this.init()
@@ -162,3 +170,17 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.c-install-page{
+		.height-fix{
+			height: auto;
+		}
+
+		.vue-input-tag-wrapper{
+			.input-tag{
+
+			}
+		}
+	}
+</style>
