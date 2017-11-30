@@ -19,14 +19,6 @@
 						|&nbsp;
 						router-link.btn.btn-default(
 							data-toggle='tooltip'
-							title='Outdated packages'
-							:to='{name: "outdated"}'
-							data-placement='bottom'
-						)
-							i.fa.fa-warning
-						|&nbsp;
-						router-link.btn.btn-default(
-							data-toggle='tooltip'
 							title='Search'
 							:to='{name: "search"}'
 							data-placement='bottom'

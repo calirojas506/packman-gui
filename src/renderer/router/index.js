@@ -16,11 +16,6 @@ export default new Router({
       component: require('@/components/Dependencies').default
     },
     {
-      path: '/outdated',
-      name: 'outdated',
-      component: require('@/components/Outdated').default
-    },
-    {
       path: '/install',
       name: 'install',
       component: require('@/components/Install').default
