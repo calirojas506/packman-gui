@@ -38,8 +38,7 @@
 						button.btn.btn-default(
 							type='button'
 							@click='$router.go(-2)'
-						) Dependencies&nbsp;
-							i.fa.fa-chevron-right
+						) Dependencies
 </template>
 
 <script>

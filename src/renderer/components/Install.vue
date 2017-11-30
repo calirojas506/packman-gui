@@ -66,21 +66,17 @@
 							button.btn.btn-default.pull-left(
 								type='button'
 								@click='$router.go(-2)'
-							)
-								i.fa.fa-chevron-left
-								|&nbsp;Search
+							) Search
 							| &nbsp;
 							router-link.btn.btn-default(
 								type='button'
 								:to='{name: "dependencies"}'
-							) Dependencies&nbsp;
-								i.fa.fa-chevron-right
+							) Dependencies
 						template(v-else)
 							button.btn.btn-default(
 								type='button'
 								@click='$router.go(-2)'
-							) Dependencies&nbsp;
-								i.fa.fa-chevron-right
+							) Dependencies
 </template>
 
 <script>
